@@ -91,16 +91,11 @@ function register() {
     };
 }
 
-module.exports = register;
-module.exports.validateExpression = validateExpression;
-module.exports.eq = eq;
-module.exports.neq = neq;
-module.exports.lt = lt;
-module.exports.not = not;
-module.exports.gte = gte;
-module.exports.and = and;
-module.exports.or = or;
-module.exports.asNumber = asNumber;
-module.exports.safeDivide = safeDivide;
-module.exports.stringLiteral = stringLiteral;
-module.exports.bakedConstant = bakedConstant;
+// Object.assign() in ONE statement - see @openrock/pathfinding's header for
+// why (esbuild tree-shaking dropped separate trailing assignments, caught
+// via a real BDS run).
+module.exports = Object.assign(register, {
+    validateExpression,
+    eq, neq, lt, not, gte, and, or,
+    asNumber, safeDivide, stringLiteral, bakedConstant,
+});
