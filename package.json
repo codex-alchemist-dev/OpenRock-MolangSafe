@@ -1,0 +1,8 @@
+{
+  "name": "@openrock/molang-safe",
+  "version": "1.0.0",
+  "description": "A validated Molang-expression builder encoding real, in-game-confirmed client-crashing patterns (no >=, no bare '', no division on a string-typed property) as both a validator and safe builder functions.",
+  "license": "MPL-2.0",
+  "private": true,
+  "main": "src/register.js"
+}
